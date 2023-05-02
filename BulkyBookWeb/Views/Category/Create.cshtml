@@ -35,7 +35,10 @@
 </div>
 
 
-
+<!-- 
+    It will do validation of properties at "Client-Side" only. 
+    Request only goes to server after all values are valides.
+-->
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }

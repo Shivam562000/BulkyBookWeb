@@ -9,7 +9,10 @@ namespace BulkyBookWeb.Models
         [Key]   // primary key of DB
         public int id { get; set; }
         [Required]   // can't be null value
+        [MaxLength(25)]
         public string name { get; set; }
+
+        [Range(1,100)]
         public int displayOrder { get; set; }
     }
 }
