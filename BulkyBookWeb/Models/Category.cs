@@ -1,10 +1,16 @@
-﻿namespace BulkyBookWeb.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace BulkyBookWeb.Models
 {
     public class Category
     {
+        // variable naming => use camel case (variableName)
+        // data annoation
+        [Key]   // primary key of DB
         public int id { get; set; }
-        public string Name { get; set; }
-        public string DisplayOrder { get; set; }
+        [Required]   // can't be null value
+        public string name { get; set; }
+        public int displayOrder { get; set; }
     }
 }
 
