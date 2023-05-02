@@ -12,6 +12,17 @@ namespace BulkyBookWeb.Data
 
         // It will create Categories table in DB
         public DbSet<Category> Categories { get; set; }
+
+        // To insert data to table
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Category>().HasData(
+                new Category { id = 1, name = "Action", displayOrder = 1},
+                new Category { id = 2, name = "Action", displayOrder = 2},
+                new Category { id = 3, name = "Action", displayOrder = 3}
+                );
+        }
+
     }
 }
 
