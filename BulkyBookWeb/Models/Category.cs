@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace BulkyBookWeb.Models
 {
@@ -10,9 +11,11 @@ namespace BulkyBookWeb.Models
         public int id { get; set; }
         [Required]   // can't be null value
         [MaxLength(25)]
-        public string name { get; set; }
+        [DisplayName("Name")]
+        public string? name { get; set; }
 
         [Range(1,100)]
+        [DisplayName("Display Order")]
         public int displayOrder { get; set; }
     }
 }
